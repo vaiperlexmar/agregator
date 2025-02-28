@@ -9,5 +9,10 @@
             "email": "vaiperlexmar@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-curl": "*",
+      "ext-xml": "*",
+      "ext-xmlreader": "*",
+      "ext-dom": "*"
+    }
 }

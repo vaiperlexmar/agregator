@@ -1,0 +1,13 @@
+{
+    "name": "vaiperlexmar/agregator",
+    "autoload": {
+
+    },
+    "authors": [
+        {
+            "name": "vaiperlexmar",
+            "email": "vaiperlexmar@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -17,6 +17,7 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 $xml = simplexml_load_string($response);
+$itemsOfNews = $xml->xpath('//item');
 
 $html = '
 <!DOCTYPE html>
@@ -24,25 +25,31 @@ $html = '
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Дока</title>
+    <title>RSS Православие</title>
   </head>
   <body>
 ';
 
-function xmlToHtml($xml) {
+function xmlToHtml($itemsOfNews): string {
     $html = '';
-    foreach ($xml->children() as $child) {
-        if ($child->children()->count() > 0) {
-            $html .= '<div class="' . $child->getName() . '">';
-            $html .= xmlToHtml($child);
-            $html .= '</div>';
-        } else {
-            $html .= '<div class="' . $child->getName() . '">';
-        }
+    foreach ($itemsOfNews as $item) {
+        $dateOfPublication = date_create_from_format('D, d M Y H:i:s O', (string) $item->pubDate);
+        $dateOfPublication = date_format($dateOfPublication, "M d, Y | H:i");
+        $newsItem = <<<HTML
+        <a class="news__link" href="$item->link">
+            <div class="news">
+                <h2 class="news__title">{$item->title}</h2>
+                <img class="news__img" src="{$item->enclosure->attributes()->url}">
+                <p class="news__description">{$item->description}</p>
+                <p class="news__date">{$dateOfPublication}</p>
+            </div>
+        </a>
+HTML;
+    $html .= $newsItem;
     }
 
     return $html;
 }
 
-$html .= xmlToHtml($xml);
+$html .= xmlToHtml($itemsOfNews);
 echo $html;

@@ -11,8 +11,6 @@
     ],
     "require": {
       "ext-curl": "*",
-      "ext-xml": "*",
-      "ext-xmlreader": "*",
-      "ext-dom": "*"
+      "ext-simplexml": "*"
     }
 }

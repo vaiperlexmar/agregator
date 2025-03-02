@@ -13,7 +13,7 @@ services:
     container_name: default_app-nginx
     restart: always
     ports:
-      - "8000:80"
+      - "8080:80"
     volumes:
       - ../src:/var/www
       - ./nginx:/etc/nginx/conf.d
@@ -21,9 +21,10 @@ services:
     container_name: default_app-db
     image: mysql:latest
     volumes:
-      - ./storage/mysql:/var/lib/mysql
+      - ./storage/mysql:/var/lib/mysql:rw
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3306:3306"
+      - "3406:3306"
+    user: mysql

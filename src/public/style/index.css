@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --main-black: #202024;
+    --background-black: #121214;
+    --main-green: #00B37E;
+    --light-gray: #E1E1E6;
+    --medium-gray: #8D8D99;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Roboto", serif;
+    background-color: var(--background-black);
+    color: var(--light-gray);
+}
+
+.news__header {
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--main-black);
+    margin-bottom: 3.2rem;
+}
+
+.news__logo {
+    display: flex;
+    font-size: 2.8rem;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+}
+
+.news__logo_img {
+    width: 5rem;
+}
+
+.news__container {
+    padding: 0 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.news__content {
+    width: 50%;
+    background-color: var(--main-black);
+    padding: 4rem 4rem;
+    border-radius: 0.8rem;
+    color: var(--light-gray);
+}
+
+.news__img {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.news__link {
+    text-decoration: none;
+}
+
+.news__title {
+    font-size: 1.8rem;
+    margin-bottom: 2.4rem;
+}
+
+.news__description {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.news__date {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+}

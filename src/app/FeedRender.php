@@ -18,7 +18,7 @@ class FeedRender
             $this->html .= <<<HTML
                 <a class="news__link" href="{$feedItem->getLink()}">
                     <div class="news__content">
-                        <img src="{$feedItem->getImageUrl()}" />
+                        <img class="news__img" src="{$feedItem->getImageUrl()}" />
                         <h2 class="news__title">{$feedItem->getTitle()}</h2>
                         <p class="news__description">{$feedItem->getDescription()}</p>
                         <span class="news__date">{$feedItem->getDate()}</span>

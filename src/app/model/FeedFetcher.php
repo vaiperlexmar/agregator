@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\model;
 
 class FeedFetcher
 {
-    public function getFeed(string $url): string {
+    public static function getFeed(string $url): string
+    {
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $url);

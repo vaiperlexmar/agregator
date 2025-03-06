@@ -17,12 +17,12 @@
 <div class="news__container">
     <?php
     foreach ($feed as $feedItem): ?>
-        <a class="news__link" href=<?= "{$feedItem->getLink()}" ?>>
+        <a class="news__link" href=<?= "{$feedItem["link"]}" ?>>
             <div class="news__content">
-                <img class="news__img" src=<?= "{$feedItem->getImageUrl()}" ?>/>
-                <h2 class="news__title"><?= "{$feedItem->getTitle()}" ?></h2>
-                <p class="news__description"><?= "{$feedItem->getDescription()}" ?></p>
-                <span class="news__date"><?= "{$feedItem->getDate()}" ?></span>
+                <img class="news__img" src=<?= "{$feedItem["imageUrl"]}" ?>>
+                <h2 class="news__title"><?= "{$feedItem["title"]}" ?></h2>
+                <p class="news__description"><?= "{$feedItem["description"]}" ?></p>
+                <span class="news__date"><?= "{$feedItem["date"]}" ?></span>
             </div>
         </a>
     <?php

@@ -29,7 +29,12 @@ class View
         }
 
         foreach ($this->params as $key => $value) {
-            $$key = $value;
+            if (is_array($value)) {
+                $feed = $this->params;
+                break;
+            } else {
+                $$key = $value;
+            }
         }
 
         ob_start();

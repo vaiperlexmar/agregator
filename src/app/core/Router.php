@@ -51,6 +51,7 @@ class Router
         if (is_array($action)) {
             [$controller, $method] = $action;
 
+
             if (class_exists($controller)) {
                 $controller = new $controller();
 
